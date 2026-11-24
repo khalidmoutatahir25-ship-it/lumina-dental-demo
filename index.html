@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Lumina Dental Studio — Modern Dentistry, Gentle Care</title>
+<meta name="description" content="Lumina Dental Studio: implants, orthodontics, cosmetic and family dentistry. Book your appointment online in under a minute.">
+<style>
+/* ============================================================
+   LUMINA DENTAL STUDIO — Dental Clinic Website Template
+   Customise: search for "EDIT:" comments, or change the CSS
+   variables below to re-brand the whole site in seconds.
+   ============================================================ */
+:root{
+  --accent:#0e7c86;          /* EDIT: main brand colour */
+  --accent-dark:#0a5a61;
+  --accent-soft:#e6f4f4;
+  --accent-ghost:#f2f9f9;
+  --ink:#17323a;
+  --ink-soft:#3d5560;
+  --muted:#6b828d;
+  --line:#e3eeee;
+  --white:#ffffff;
+  --radius:20px;
+  --radius-sm:14px;
+  --shadow:0 20px 45px -18px rgba(14,124,134,.22);
+  --shadow-card:0 10px 30px -12px rgba(23,50,58,.14);
+  --font:"Avenir Next","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-display:Georgia,"Times New Roman",serif;
+  --ease:cubic-bezier(.22,.8,.28,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{width:min(1180px,92%);margin-inline:auto}
+section{padding:96px 0;position:relative}
+::selection{background:var(--accent);color:#fff}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1rem;padding:15px 30px;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s,color .35s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 26px -10px rgba(14,124,134,.55)}
+.btn-primary:hover{background:var(--accent-dark);transform:translateY(-3px);box-shadow:0 18px 32px -10px rgba(14,124,134,.5)}
+.btn-ghost{background:transparent;color:var(--accent-dark);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+.btn-light{background:#fff;color:var(--accent-dark)}
+.btn-light:hover{transform:translateY(-3px);box-shadow:0 16px 30px -12px rgba(0,0,0,.35)}
+
+/* ---------- Section headings ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:7px 14px;border-radius:999px;margin-bottom:18px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.section-head{max-width:640px;margin-bottom:54px}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head.center .eyebrow{margin-inline:auto}
+h1,h2,h3{line-height:1.15;color:var(--ink);font-weight:700}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:-.02em;margin-bottom:14px}
+.section-head p{color:var(--muted);font-size:1.06rem}
+
+/* ---------- Top bar ---------- */
+.topbar{background:var(--ink);color:#cfe3e6;font-size:.85rem}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px;flex-wrap:wrap}
+.topbar .tb-group{display:flex;gap:26px;flex-wrap:wrap}
+.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar svg{width:14px;height:14px;stroke:var(--accent);flex:none}
+.topbar a{color:#fff;font-weight:600}
+.topbar a:hover{color:#8fd6dc}
+
+/* ---------- Header / nav ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:box-shadow .3s}
+header.scrolled{box-shadow:0 10px 30px -14px rgba(23,50,58,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 0}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.28rem;letter-spacing:-.02em}
+.logo-mark{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--accent),#39b6ae);display:grid;place-items:center;box-shadow:0 10px 20px -8px rgba(14,124,134,.6)}
+.logo-mark svg{width:26px;height:26px}
+.logo small{display:block;font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;gap:34px;font-weight:550;font-size:.98rem}
+.nav-links a{position:relative;padding:4px 0;color:var(--ink-soft)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent);border-radius:2px;transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
+.nav-links a:hover{color:var(--accent-dark)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{display:flex;align-items:center;gap:16px}
+.nav-phone{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--ink)}
+.nav-phone svg{width:19px;height:19px;stroke:var(--accent)}
+.nav-phone:hover{color:var(--accent)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger svg{width:28px;height:28px;stroke:var(--ink)}
+.mobile-menu{display:none;flex-direction:column;gap:4px;padding:10px 0 20px;border-top:1px solid var(--line)}
+.mobile-menu a{padding:11px 6px;font-weight:600;color:var(--ink-soft);border-radius:10px}
+.mobile-menu a:hover{background:var(--accent-ghost);color:var(--accent-dark)}
+.mobile-menu.open{display:flex}
+
+/* ---------- Hero ---------- */
+.hero{padding:84px 0 110px;background:
+  radial-gradient(700px 480px at 88% -10%,rgba(14,124,134,.13),transparent 60%),
+  radial-gradient(560px 420px at -10% 110%,rgba(57,182,174,.10),transparent 60%),
+  linear-gradient(180deg,#fbfdfd, #fff)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.2vw,4rem);letter-spacing:-.025em;margin-bottom:20px}
+.hero h1 .accent-word{color:var(--accent);position:relative;white-space:nowrap}
+.hero h1 .accent-word svg{position:absolute;left:0;bottom:-8px;width:100%;height:10px}
+.hero-sub{font-size:1.13rem;color:var(--muted);max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+.hero-points{display:flex;gap:26px;flex-wrap:wrap;font-size:.92rem;font-weight:600;color:var(--ink-soft)}
+.hero-points span{display:inline-flex;align-items:center;gap:8px}
+.hero-points svg{width:17px;height:17px;stroke:var(--accent);flex:none}
+.hero-visual{position:relative}
+.hero-card{background:linear-gradient(150deg,#0e7c86,#0a5a61 70%);border-radius:28px;padding:38px 34px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-card::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 65%);top:-130px;right:-110px}
+.hero-card::after{content:"";position:absolute;width:200px;height:200px;border-radius:50%;border:1.5px solid rgba(255,255,255,.18);bottom:-90px;left:-60px}
+.tooth-big{width:120px;height:120px;margin-bottom:18px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.25));animation:floaty 6s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}
+.hero-card h3{color:#fff;font-size:1.45rem;margin-bottom:8px;position:relative;z-index:1}
+.hero-card p{color:#cfe9ea;font-size:.97rem;position:relative;z-index:1;max-width:340px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:18px 16px;text-align:center;box-shadow:var(--shadow-card);transition:transform .35s var(--ease)}
+.stat:hover{transform:translateY(-4px)}
+.stat .num{font-size:1.65rem;font-weight:800;color:var(--accent-dark);letter-spacing:-.02em;line-height:1}
+.stat .lbl{font-size:.78rem;color:var(--muted);font-weight:600;margin-top:5px}
+.hero-badge{position:absolute;top:26px;right:-8px;background:#fff;border-radius:16px;box-shadow:var(--shadow-card);padding:12px 16px;display:flex;align-items:center;gap:11px;animation:floaty 7s ease-in-out infinite;z-index:2}
+.hero-badge .stars{display:flex;gap:1px}
+.hero-badge .stars svg{width:14px;height:14px;fill:#f5a623}
+.hero-badge strong{font-size:.92rem;line-height:1.2}
+.hero-badge small{color:var(--muted);font-size:.75rem}
+</style>
+<style>
+/* ---------- Trust strip ---------- */
+.trust-strip{padding:34px 0;border-block:1px solid var(--line);background:#fff}
+.trust-strip .container{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.trust-strip .t-label{font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.trust-item{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink-soft);font-size:.98rem}
+.trust-item svg{width:22px;height:22px;stroke:var(--accent);flex:none}
+
+/* ---------- Services ---------- */
+.services{background:var(--accent-ghost)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;position:relative;overflow:hidden}
+.service-card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--accent),#39b6ae);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:60px;height:60px;border-radius:17px;background:var(--accent-soft);display:grid;place-items:center;margin-bottom:20px;transition:background .4s,transform .4s var(--ease)}
+.service-card:hover .service-icon{background:var(--accent);transform:rotate(-6deg) scale(1.05)}
+.service-icon svg{width:30px;height:30px;stroke:var(--accent);transition:stroke .4s}
+.service-card:hover .service-icon svg{stroke:#fff}
+.service-card h3{font-size:1.22rem;margin-bottom:9px}
+.service-card p{color:var(--muted);font-size:.95rem;margin-bottom:16px}
+.service-price{font-weight:800;color:var(--accent-dark);font-size:.95rem}
+.service-link{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.92rem;color:var(--accent);margin-top:8px}
+.service-link svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+.service-link:hover svg{transform:translateX(4px)}
+
+/* ---------- Why us ---------- */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.why-visual{position:relative}
+.why-panel{background:linear-gradient(160deg,var(--accent-soft),#d7eeee);border-radius:28px;aspect-ratio:4/4.4;display:flex;align-items:flex-end;padding:30px;overflow:hidden}
+.why-panel::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.75),transparent 65%);top:-140px;right:-120px}
+.why-panel .big-tooth{position:absolute;top:44px;left:50%;transform:translateX(-50%);width:190px;height:190px;opacity:.95;animation:floaty 8s ease-in-out infinite}
+.why-quote{background:#fff;border-radius:18px;padding:22px 24px;box-shadow:var(--shadow-card);position:relative;z-index:1}
+.why-quote p{font-family:var(--font-display);font-style:italic;font-size:1.08rem;color:var(--ink-soft)}
+.why-quote strong{display:block;margin-top:8px;font-family:var(--font);font-style:normal;font-size:.88rem;color:var(--accent-dark)}
+.why-list{display:grid;gap:18px;margin-top:30px}
+.why-item{display:flex;gap:16px}
+.why-item .check{width:30px;height:30px;flex:none;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center}
+.why-item .check svg{width:16px;height:16px;stroke:var(--accent)}
+.why-item h3{font-size:1.05rem;margin-bottom:3px}
+.why-item p{color:var(--muted);font-size:.94rem}
+
+/* ---------- Smile gallery / before-after ---------- */
+.gallery{background:var(--ink);color:#fff}
+.gallery h2{color:#fff}
+.gallery .section-head p{color:#9db8c0}
+.gallery .eyebrow{background:rgba(255,255,255,.1);color:#8fd6dc}
+.gallery .eyebrow::before{background:#8fd6dc}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ba-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:18px;transition:transform .4s var(--ease),background .4s}
+.ba-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.08)}
+.ba-frame{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3;cursor:ew-resize;user-select:none;touch-action:pan-y}
+.ba-before,.ba-after{position:absolute;inset:0;display:grid;place-items:center}
+.ba-before{background:linear-gradient(140deg,#8a7f5c,#b3a678)}
+.ba-after{background:linear-gradient(140deg,#fdfefe,#dceeee)}
+.ba-smile{width:62%}
+.ba-tag{position:absolute;top:10px;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;z-index:3}
+.ba-tag.before{left:10px}
+.ba-tag.after{right:10px;background:var(--accent)}
+.ba-after-wrap{position:absolute;inset:0;overflow:hidden}
+.ba-handle{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);z-index:4;transform:translateX(-50%)}
+.ba-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.3);display:grid;place-items:center}
+.ba-knob svg{width:20px;height:20px;stroke:var(--accent-dark)}
+.ba-info{padding:16px 6px 4px}
+.ba-info h3{color:#fff;font-size:1.05rem}
+.ba-info p{color:#9db8c0;font-size:.88rem}
+.gallery-note{text-align:center;color:#9db8c0;font-size:.85rem;margin-top:28px}
+
+/* ---------- Team ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.doc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.doc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.doc-photo{aspect-ratio:1/1.05;display:grid;place-items:center;position:relative;overflow:hidden}
+.doc-photo .initials{font-size:3rem;font-weight:800;color:rgba(255,255,255,.92);letter-spacing:.02em}
+.doc-photo::after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);bottom:-80px;right:-50px}
+.doc-1{background:linear-gradient(150deg,#0e7c86,#0a5a61)}
+.doc-2{background:linear-gradient(150deg,#39b6ae,#0e7c86)}
+.doc-3{background:linear-gradient(150deg,#5aa7b8,#2b7f8f)}
+.doc-4{background:linear-gradient(150deg,#7fc4bd,#3d9a94)}
+.doc-body{padding:22px}
+.doc-body h3{font-size:1.1rem}
+.doc-role{color:var(--accent);font-weight:700;font-size:.85rem;margin-bottom:8px}
+.doc-body p{color:var(--muted);font-size:.88rem}
+.doc-creds{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.doc-creds span{font-size:.7rem;font-weight:700;background:var(--accent-ghost);border:1px solid var(--line);color:var(--ink-soft);padding:4px 9px;border-radius:999px}
+
+/* ---------- Testimonials ---------- */
+.testimonials{background:var(--accent-ghost);overflow:hidden}
+.testi-viewport{overflow:hidden;border-radius:var(--radius)}
+.testi-track{display:flex;transition:transform .65s var(--ease)}
+.testi-slide{min-width:100%;padding:6px}
+.testi-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:44px 48px;text-align:center;box-shadow:var(--shadow-card)}
+.testi-card .stars{display:flex;justify-content:center;gap:3px;margin-bottom:20px}
+.testi-card .stars svg{width:20px;height:20px;fill:#f5a623}
+.testi-card blockquote{font-family:var(--font-display);font-size:clamp(1.15rem,2.2vw,1.45rem);font-style:italic;color:var(--ink-soft);max-width:720px;margin:0 auto 22px;line-height:1.5}
+.testi-who strong{display:block;font-size:1rem}
+.testi-who span{color:var(--muted);font-size:.88rem}
+.testi-dots{display:flex;justify-content:center;gap:9px;margin-top:26px}
+.testi-dots button{width:10px;height:10px;border-radius:50%;border:0;background:#c3d9db;cursor:pointer;transition:all .3s;padding:0}
+.testi-dots button.active{background:var(--accent);width:30px;border-radius:99px}
+
+/* ---------- Pricing & insurance ---------- */
+.pricing-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:start}
+.price-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.price-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 26px;border-bottom:1px solid var(--line);transition:background .3s}
+.price-row:last-child{border-bottom:0}
+.price-row:hover{background:var(--accent-ghost)}
+.price-row .p-name{font-weight:650}
+.price-row .p-name small{display:block;color:var(--muted);font-weight:500;font-size:.83rem}
+.price-row .p-val{font-weight:800;color:var(--accent-dark);font-size:1.08rem;white-space:nowrap}
+.price-row .p-val small{color:var(--muted);font-weight:600;font-size:.78rem}
+.insurance-card{background:linear-gradient(155deg,var(--accent),var(--accent-dark));border-radius:var(--radius);padding:36px 32px;color:#fff;box-shadow:var(--shadow)}
+.insurance-card h3{color:#fff;font-size:1.4rem;margin-bottom:10px}
+.insurance-card p{color:#cfe9ea;font-size:.95rem;margin-bottom:22px}
+.ins-logos{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+.ins-logos span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:10px;font-weight:700;font-size:.85rem;transition:background .3s,transform .3s}
+.ins-logos span:hover{background:rgba(255,255,255,.26);transform:translateY(-2px)}
+.finance-note{display:flex;gap:12px;background:rgba(255,255,255,.1);border-radius:14px;padding:16px;font-size:.88rem;color:#e6f4f4}
+.finance-note svg{width:22px;height:22px;flex:none;stroke:#8fd6dc}
+
+/* ---------- Booking ---------- */
+.booking{background:linear-gradient(180deg,#fff,var(--accent-ghost))}
+.booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:start}
+.booking-info h2{margin-bottom:14px}
+.booking-info>p{color:var(--muted);margin-bottom:28px}
+.info-row{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid var(--line)}
+.info-row:last-of-type{border-bottom:0}
+.info-row .ic{width:46px;height:46px;flex:none;border-radius:13px;background:var(--accent-soft);display:grid;place-items:center}
+.info-row .ic svg{width:22px;height:22px;stroke:var(--accent)}
+.info-row h3{font-size:1rem}
+.info-row p{color:var(--muted);font-size:.93rem}
+.hours-table{width:100%;margin-top:8px;font-size:.93rem}
+.hours-table td{padding:5px 0;color:var(--muted)}
+.hours-table td:last-child{text-align:right;font-weight:700;color:var(--ink)}
+.hours-table tr.today td{color:var(--accent-dark)}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:26px;padding:38px;box-shadow:var(--shadow)}
+.form-card h3{font-size:1.35rem;margin-bottom:6px}
+.form-card>p{color:var(--muted);font-size:.93rem;margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.83rem;font-weight:700;color:var(--ink-soft)}
+.field input,.field select,.field textarea{font-family:var(--font);font-size:.96rem;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;background:#fbfdfd;color:var(--ink);transition:border-color .3s,box-shadow .3s;width:100%;appearance:none}
+.field textarea{resize:vertical;min-height:88px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(14,124,134,.13)}
+.form-card .btn{width:100%;justify-content:center;margin-top:20px}
+.form-success{display:none;text-align:center;padding:26px 6px 8px}
+.form-success .ok-ring{width:74px;height:74px;margin:0 auto 18px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;animation:pop .5s var(--ease)}
+.form-success .ok-ring svg{width:36px;height:36px;stroke:var(--accent)}
+@keyframes pop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+.form-success h3{margin-bottom:8px}
+.form-success p{color:var(--muted);font-size:.94rem}
+.form-privacy{font-size:.78rem;color:var(--muted);text-align:center;margin-top:14px}
+
+/* ---------- Contact / footer ---------- */
+.contact-band{background:var(--ink);color:#fff;padding:70px 0}
+.contact-band .container{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:44px}
+.contact-band h3{color:#fff;font-size:1.15rem;margin-bottom:16px}
+.contact-band p,.contact-band li{color:#9db8c0;font-size:.94rem}
+.contact-band li{padding:5px 0;display:flex;gap:10px;align-items:flex-start}
+.contact-band li svg{width:17px;height:17px;stroke:var(--accent);flex:none;margin-top:3px}
+.contact-band a:hover{color:#8fd6dc}
+.map-tile{border-radius:18px;background:linear-gradient(150deg,#1d4552,#122c34);border:1px solid rgba(255,255,255,.09);min-height:190px;position:relative;overflow:hidden}
+.map-tile::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px}
+.map-pin{position:absolute;top:44%;left:52%;transform:translate(-50%,-100%);text-align:center}
+.map-pin svg{width:36px;height:36px;fill:var(--accent);margin-inline:auto;animation:floaty 4s ease-in-out infinite}
+.map-pin span{display:block;background:#fff;color:var(--ink);font-size:.72rem;font-weight:800;padding:4px 10px;border-radius:99px;margin-top:2px;white-space:nowrap}
+footer{background:#0d2129;color:#7d99a3;padding:26px 0;font-size:.87rem}
+footer .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* ---------- Floating book button (mobile) ---------- */
+.float-book{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;display:none;justify-content:center;box-shadow:0 18px 34px -10px rgba(14,124,134,.6)}
+
+/* ---------- Reveal animations ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}.reveal-d4{transition-delay:.32s}.reveal-d5{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1020px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .ba-grid{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{max-width:560px}
+  .why-grid,.booking-grid,.pricing-grid{grid-template-columns:1fr}
+  .contact-band .container{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  section{padding:64px 0}
+  .nav-links,.nav-phone{display:none}
+  .burger{display:block}
+  .nav-cta .btn{padding:11px 20px;font-size:.9rem}
+  .services-grid,.team-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .form-card{padding:28px 22px}
+  .testi-card{padding:34px 24px}
+  .contact-band .container{grid-template-columns:1fr}
+  .hero{padding:54px 0 74px}
+  .hero-badge{right:0}
+  .topbar .tb-hide{display:none}
+  .float-book{display:inline-flex}
+  body{padding-bottom:76px}
+}
+</style>
+<style>
+/* ============================================================
+   V2 UPGRADE — responsive hardening + advanced design pass
+   Critique basis (Impeccable): one primary action per view,
+   ≤4 items per decision group, visible focus, 44px targets,
+   AA contrast, input method detected — not just screen size.
+   ============================================================ */
+:root{
+  --muted:#5c7482;              /* v2: darkened from #6b828d — now ≈4.6:1 on white (WCAG AA) */
+  --ease-spring:cubic-bezier(.34,1.45,.4,1);
+}
+html{scroll-padding-top:94px;overflow-x:hidden;overflow-x:clip}
+body{-webkit-tap-highlight-color:rgba(14,124,134,.14)}
+section{padding:clamp(64px,9vw,96px) 0}
+h1,h2{text-wrap:balance}
+.hero-sub,.section-head p{text-wrap:pretty}
+.stat .num,.price-row .p-val,.hours-table,.hero-badge strong{font-variant-numeric:tabular-nums}
+
+/* Designed keyboard focus on every interactive element */
+:focus-visible{outline:2.5px solid var(--accent);outline-offset:3px;border-radius:6px}
+.gallery :focus-visible,.contact-band :focus-visible{outline-color:#8fd6dc}
+.field label{transition:color .3s}
+.field:focus-within label{color:var(--accent-dark)}
+
+/* Scroll-progress hairline under the header */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:300;background:linear-gradient(90deg,var(--accent),#39b6ae);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
+
+/* Buttons: sheen sweep on the primary action + a real press state */
+.btn{position:relative}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn-primary{overflow:hidden}
+.btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.38) 50%,transparent 68%);transform:translateX(-130%);transition:transform .7s var(--ease);pointer-events:none}
+@media(hover:hover) and (pointer:fine){.btn-primary:hover::after{transform:translateX(130%)}}
+
+/* Hero: slowly drifting mesh blob behind the content + glass rating badge */
+.hero::before{content:"";position:absolute;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle,rgba(57,182,174,.17),transparent 65%);top:-170px;right:-130px;pointer-events:none;animation:meshDrift 16s ease-in-out infinite alternate}
+@keyframes meshDrift{from{transform:translate(0,0) scale(1)}to{transform:translate(-46px,34px) scale(1.12)}}
+.hero .container{position:relative;z-index:1}
+.hero-badge{background:rgba(255,255,255,.86);backdrop-filter:blur(10px) saturate(1.5);-webkit-backdrop-filter:blur(10px) saturate(1.5);border:1px solid rgba(255,255,255,.7)}
+.hero-card{will-change:transform}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .stat .num{background:linear-gradient(120deg,var(--accent-dark),#39b6ae);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+
+/* Cards: a quiet accent ring joins the lift on hover */
+.service-card:hover{box-shadow:var(--shadow),0 0 0 1px rgba(14,124,134,.16)}
+.doc-card:hover{box-shadow:var(--shadow),0 0 0 1px rgba(14,124,134,.12)}
+
+/* Dark gallery: ambient teal glow + springy slider knob */
+.gallery{background:radial-gradient(820px 480px at 50% -8%,rgba(14,124,134,.28),transparent 62%),var(--ink)}
+.ba-knob{transition:transform .3s var(--ease-spring)}
+.ba-frame:active .ba-knob{transform:translate(-50%,-50%) scale(1.14)}
+
+/* Reveal variant: gentle scale-in for visual panels */
+.reveal-scale{transform:translateY(26px) scale(.965)}
+.reveal-scale.visible{transform:none}
+
+/* Selects get a real chevron (they were appearance:none with no indicator) */
+.field select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230a5a61' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='m5 9 7 7 7-7'/></svg>");background-repeat:no-repeat;background-position:right 15px center;padding-right:42px}
+
+/* Testimonial dots: 36px hit area carrying a small visual dot */
+.testi-dots{gap:2px}
+.testi-dots button{width:36px;height:36px;background:transparent;display:grid;place-items:center;border-radius:50%}
+.testi-dots button::before{content:"";width:10px;height:10px;border-radius:99px;background:#c3d9db;transition:all .3s var(--ease)}
+.testi-dots button.active{background:transparent;width:36px}
+.testi-dots button.active::before{width:26px;background:var(--accent)}
+
+/* Safer tap targets */
+.burger{padding:10px}
+.service-link{padding:7px 0 3px}
+@media(pointer:coarse){
+  .nav-links a{padding:10px 0}
+  .mobile-menu a{padding:13px 8px}
+}
+
+/* Container queries: components answer to their own width, not the viewport */
+.form-card{container-type:inline-size;container-name:formcard}
+@container formcard (max-width:540px){.form-grid{grid-template-columns:1fr}}
+.price-card{container-type:inline-size;container-name:pricecard}
+@container pricecard (max-width:430px){.price-row{flex-direction:column;align-items:flex-start;gap:3px}}
+
+/* Wide desktops: let the layout breathe past 1440px */
+@media(min-width:1440px){
+  .container{width:min(1260px,92%)}
+  .hero{padding-top:104px;padding-bottom:124px}
+}
+
+/* Tablet refinements */
+@media(max-width:1020px){
+  .hero-badge{right:0}
+  .why-panel{aspect-ratio:auto;min-height:400px}
+  .trust-strip .container{justify-content:center}
+}
+
+/* Small phones: the nowrap hero phrase must fit a 360px screen */
+@media(max-width:680px){
+  .hero h1{font-size:clamp(2rem,9.6vw,2.5rem)}
+  .stat{padding:14px 8px}
+  .stat .num{font-size:1.42rem}
+  .hero-points{gap:12px 16px}
+  .float-book{bottom:calc(16px + env(safe-area-inset-bottom))}
+  body{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+}
+@media(max-width:480px){
+  .logo small{display:none}
+  .logo{font-size:1.14rem}
+  .nav{padding:12px 0}
+  .nav-cta .btn{padding:10px 15px;font-size:.84rem}
+  .hero-card{padding:30px 24px}
+  .form-card{padding:26px 18px}
+  .why-panel{min-height:330px}
+  .why-panel .big-tooth{width:140px;height:140px}
+  .testi-card{padding:30px 20px}
+}
+@media(max-width:400px){
+  .nav-cta .btn{display:none}
+  .hero-actions .btn{width:100%;justify-content:center}
+  .hero-badge{position:static;animation:none;margin-bottom:16px;max-width:max-content}
+}
+
+/* Touch devices: hover lifts must not stick after a tap */
+@media(hover:none){
+  .service-card:hover,.doc-card:hover,.stat:hover,.ba-card:hover{transform:none}
+  .btn-primary:hover,.btn-ghost:hover,.btn-light:hover{transform:none}
+  .service-card:hover .service-icon{transform:none}
+  .service-link:hover svg{transform:none}
+  .ins-logos span:hover{transform:none}
+}
+
+/* Reduced motion: v2 layers join the existing policy */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-iteration-count:1!important}
+  .hero::before{animation:none}
+  .btn-primary::after{display:none}
+  .scroll-progress{display:none}
+}
+</style>
+<style>
+/* ============================================================
+   V3 UPGRADE — animated pictures + deeper scroll effects
+   All artwork is inline SVG / CSS (zero external assets).
+   Motion uses transform/opacity only (clip-path appears only
+   in reveal transitions); every v3 layer settles or parks
+   under prefers-reduced-motion.
+   ============================================================ */
+
+/* ---------- Animated picture: hero tooth scene ---------- */
+.tooth-scene{position:relative;width:120px;height:120px;margin-bottom:18px}
+.tooth-scene .tooth-big{margin-bottom:0}
+.hero-visual.visible .tooth-scene{animation:sceneIn .9s var(--ease-spring) .15s backwards}
+@keyframes sceneIn{from{transform:scale(.86);opacity:.3}to{transform:scale(1);opacity:1}}
+/* Shine sweep, masked to the tooth silhouette so the gloss
+   travels across the tooth itself, never the card behind it */
+.tooth-scene .shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 34%,rgba(10,90,97,.20) 50%,transparent 66%);-webkit-mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 3.2c-1.5-1.3-3.4-2-5.3-1.7C4 2 2.4 4 2.6 6.6c.1 1.9 1 3.4 1.6 5.2.5 1.6.9 3.4 1.3 5.2.3 1.4.6 3.2 2 3.4 1.7.3 1.9-1.9 2.4-3.2.3-.9.7-1.7 1.1-1.7s.8.8 1.1 1.7c.5 1.3.7 3.5 2.4 3.2 1.4-.2 1.7-2 2-3.4.4-1.8.8-3.6 1.3-5.2.6-1.8 1.5-3.3 1.6-5.2.2-2.6-1.4-4.6-4.1-5.1-1.9-.3-3.8.4-5.3 1.7z' fill='black'/></svg>");mask-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 3.2c-1.5-1.3-3.4-2-5.3-1.7C4 2 2.4 4 2.6 6.6c.1 1.9 1 3.4 1.6 5.2.5 1.6.9 3.4 1.3 5.2.3 1.4.6 3.2 2 3.4 1.7.3 1.9-1.9 2.4-3.2.3-.9.7-1.7 1.1-1.7s.8.8 1.1 1.7c.5 1.3.7 3.5 2.4 3.2 1.4-.2 1.7-2 2-3.4.4-1.8.8-3.6 1.3-5.2.6-1.8 1.5-3.3 1.6-5.2.2-2.6-1.4-4.6-4.1-5.1-1.9-.3-3.8.4-5.3 1.7z' fill='black'/></svg>");-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;transform:translateX(-130%);animation:toothShine 5.6s ease-in-out infinite}
+@keyframes toothShine{0%{transform:translateX(-130%)}36%{transform:translateX(130%)}100%{transform:translateX(130%)}}
+/* Sparkles + rising bubbles (shared by the hero and why scenes) */
+.spark{position:absolute;pointer-events:none;color:#dff7f5;animation:twinkle 3.6s ease-in-out infinite;z-index:2}
+.spark svg{width:100%;height:100%;fill:currentColor}
+@keyframes twinkle{0%,100%{transform:scale(.55) rotate(0deg);opacity:.3}50%{transform:scale(1.08) rotate(20deg);opacity:1}}
+.bubble{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.45);pointer-events:none;opacity:0;animation:bubbleRise 5.2s linear infinite}
+@keyframes bubbleRise{0%{transform:translateY(8px) scale(.7);opacity:0}18%{opacity:.75}100%{transform:translateY(-52px) scale(1.05);opacity:0}}
+
+/* ---------- Hero parallax layer: drifting sparkle field ---------- */
+.hero-sparkles{position:absolute;top:0;right:0;width:min(580px,92%);height:100%;pointer-events:none;z-index:0;will-change:transform}
+.hero-sparkles i{position:absolute;display:block;border-radius:50%;background:radial-gradient(circle,rgba(57,182,174,.32),transparent 70%);animation:floaty 9s ease-in-out infinite}
+
+/* ---------- Animated picture: why-us tooth + shield scene ---------- */
+.why-scene{position:absolute;top:44px;left:50%;margin-left:-95px;width:190px;height:190px;clip-path:inset(0 0 0 0 round 30px);opacity:1;transition:clip-path .9s var(--ease),opacity .9s var(--ease);will-change:transform}
+.why-visual:not(.visible) .why-scene{clip-path:inset(16% 16% 16% 16% round 30px);opacity:0}
+.why-scene .big-tooth{position:static;width:190px;height:190px}
+.shield-badge{position:absolute;right:-8px;bottom:4px;width:62px;height:62px;background:#fff;border-radius:50%;box-shadow:var(--shadow-card);display:grid;place-items:center;z-index:3}
+.shield-badge svg{width:34px;height:34px}
+.shield-badge::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(14,124,134,.35);animation:badgePulse 2.6s ease-out infinite;pointer-events:none}
+@keyframes badgePulse{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.18);opacity:0}}
+.shield-badge .check-draw{stroke-dasharray:30;stroke-dashoffset:30}
+.why-visual.visible .shield-badge .check-draw{animation:drawCheck .8s .5s var(--ease) forwards}
+@keyframes drawCheck{to{stroke-dashoffset:0}}
+
+/* ---------- Smile journey: scroll-filled line through the why list ---------- */
+.why-list{position:relative;gap:30px}
+.journey-track{position:absolute;left:14px;top:15px;bottom:15px;width:3px;border-radius:99px;background:var(--line);overflow:hidden;z-index:0}
+.journey-fill{width:100%;height:0;background:linear-gradient(180deg,#39b6ae,var(--accent));border-radius:99px;transition:height .25s linear}
+.why-item{position:relative}
+.why-item .check{transition:background .45s var(--ease),box-shadow .45s var(--ease)}
+.why-item.passed .check{background:var(--accent);box-shadow:0 6px 14px -6px rgba(14,124,134,.55)}
+.why-item.passed .check svg{stroke:#fff}
+
+/* ---------- Gallery: Ken Burns smiles + clip-path card reveals ---------- */
+.ba-smile{animation:kenburns 15s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.13) translate(-1.6%,1.2%)}}
+.ba-card{transition:opacity .8s var(--ease),transform .55s var(--ease),background .4s,clip-path .95s var(--ease)}
+.ba-card.reveal{clip-path:inset(16% 9% 16% 9% round 20px)}
+.ba-card.reveal.visible{clip-path:inset(0 0 0 0 round 20px)}
+/* The gallery's ambient glow drifts sideways as the section scrolls through */
+.gallery{background:radial-gradient(820px 480px at calc(50% + var(--gx,0px)) -8%,rgba(14,124,134,.28),transparent 62%),var(--ink)}
+
+/* ---------- Service icons: in-view pop + per-service hover scenes ---------- */
+.service-card.visible .service-icon{animation:iconPop .6s var(--ease-spring) .1s backwards}
+@keyframes iconPop{0%{transform:scale(.4);opacity:0}70%{transform:scale(1.12);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes iconRock{0%,100%{transform:rotate(0)}30%{transform:rotate(-7deg)}65%{transform:rotate(6deg)}}
+@keyframes iconDip{0%,100%{transform:translateY(0)}45%{transform:translateY(3.5px)}}
+@keyframes iconSlide{0%,100%{transform:translateX(0)}35%{transform:translateX(-2.5px)}70%{transform:translateX(2.5px)}}
+@keyframes iconSpinSoft{from{transform:rotate(0)}to{transform:rotate(45deg)}}
+@keyframes iconPulse{0%,100%{transform:scale(1)}45%{transform:scale(1.14)}}
+@keyframes iconShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}55%{transform:rotate(7deg)}80%{transform:rotate(-4deg)}}
+@media(hover:hover) and (pointer:fine){
+  .services-grid .service-card:nth-child(1):hover .service-icon svg{animation:iconRock .55s var(--ease)}
+  .services-grid .service-card:nth-child(2):hover .service-icon svg{animation:iconDip .55s var(--ease)}
+  .services-grid .service-card:nth-child(3):hover .service-icon svg{animation:iconSlide .55s var(--ease)}
+  .services-grid .service-card:nth-child(4):hover .service-icon svg{animation:iconSpinSoft .6s var(--ease)}
+  .services-grid .service-card:nth-child(5):hover .service-icon svg{animation:iconPulse .5s var(--ease)}
+  .services-grid .service-card:nth-child(6):hover .service-icon svg{animation:iconShake .45s var(--ease)}
+}
+
+/* ---------- Pinned moment: the why visual sticks while the journey scrolls ---------- */
+@media(min-width:1021px){
+  .why-grid{align-items:start}
+  .why-visual{position:sticky;top:108px}
+}
+@media(max-width:480px){
+  .why-scene{width:140px;height:140px;margin-left:-70px}
+  .why-scene .big-tooth{width:140px;height:140px}
+  .shield-badge{width:50px;height:50px}
+  .shield-badge svg{width:27px;height:27px}
+}
+
+/* Reduced motion: v3 layers settle or park */
+@media (prefers-reduced-motion:reduce){
+  .tooth-scene .shine,.spark,.bubble,.ba-smile,.shield-badge::after,.hero-sparkles i{animation:none!important}
+  .hero-visual.visible .tooth-scene,.service-card.visible .service-icon{animation:none!important}
+  .why-scene{clip-path:none;opacity:1;transition:none}
+  .ba-card.reveal{clip-path:none}
+  .journey-fill{height:100%;transition:none}
+}
+</style>
+<style>
+/* ============================================================
+   V4 — real photography, professionally art-directed
+   Photos live in the assets/ folder (relative paths) so buyers
+   can swap them like-for-like. Motion: Ken Burns on the hero
+   photo, parallax wrappers fed by the v3 rAF handler, hover
+   zoom on cards, clip-path reveals on scroll into view.
+   Transform / opacity only (clip-path in reveals only);
+   everything settles under prefers-reduced-motion.
+   ============================================================ */
+.photo-frame{position:relative;overflow:hidden;background:#dceeee}
+.photo-frame img{display:block;width:100%;height:100%;object-fit:cover}
+.photo-frame .plx-wrap{position:absolute;inset:-30px;will-change:transform}
+.photo-frame .plx-wrap img{width:100%;height:100%}
+@keyframes kbZoom{from{transform:scale(1.03) translate(0,0)}to{transform:scale(1.15) translate(-1.6%,1.1%)}}
+.kb{animation:kbZoom 18s ease-in-out infinite alternate}
+.photo-chip{position:absolute;left:16px;bottom:16px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);font-size:.8rem;font-weight:700;padding:8px 14px;border-radius:999px;box-shadow:var(--shadow-card)}
+
+/* Hero photo panel (Ken Burns + parallax + clip reveal) */
+.hero-photo{height:236px;border-radius:24px;margin-bottom:18px;box-shadow:var(--shadow-card);clip-path:inset(14% 7% 14% 7% round 24px);opacity:0;transition:clip-path 1s var(--ease),opacity 1s var(--ease)}
+.hero-visual.visible .hero-photo{clip-path:inset(0 0 0 0 round 24px);opacity:1}
+
+/* Why-us feature photo (parallax + clip reveal) */
+.feature-photo{height:360px;border-radius:28px;margin-top:56px;box-shadow:var(--shadow-card);transition:opacity .8s var(--ease),transform .8s var(--ease),clip-path 1s var(--ease)}
+.feature-photo.reveal{clip-path:inset(10% 5% 10% 5% round 28px)}
+.feature-photo.reveal.visible{clip-path:inset(0 0 0 0 round 28px)}
+
+/* Doctor portraits (hover zoom; initials remain as fallback) */
+.doc-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;transition:transform .8s var(--ease)}
+.doc-card:hover .doc-photo img{transform:scale(1.06)}
+
+/* "Real results" portrait row in the gallery (hover zoom + clip reveal) */
+.results-title{color:#fff;text-align:center;font-size:1.35rem;margin:48px 0 20px}
+.results-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.result-card{border-radius:20px;aspect-ratio:3/4;box-shadow:var(--shadow-card);transition:opacity .8s var(--ease),transform .8s var(--ease),clip-path 1s var(--ease)}
+.result-card.reveal{clip-path:inset(14% 10% 14% 10% round 20px)}
+.result-card.reveal.visible{clip-path:inset(0 0 0 0 round 20px)}
+.result-card img{transition:transform .8s var(--ease)}
+.result-card:hover img{transform:scale(1.06)}
+.result-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:40px 16px 14px;background:linear-gradient(180deg,transparent,rgba(6,40,44,.8));color:#fff}
+.result-cap strong{display:block;font-size:.95rem}
+.result-cap span{font-size:.78rem;color:#bfe3e1}
+
+@media(max-width:680px){
+  .hero-photo{height:200px}
+  .feature-photo{height:240px;margin-top:40px}
+  .results-row{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}
+  .result-card{aspect-ratio:4/5}
+}
+@media(hover:none){
+  .doc-card:hover .doc-photo img,.result-card:hover img{transform:none}
+}
+/* Reduced motion: v4 photo layers settle */
+@media (prefers-reduced-motion:reduce){
+  .kb{animation:none!important}
+  .hero-photo{clip-path:none;opacity:1;transition:none}
+  .feature-photo.reveal,.result-card.reveal{clip-path:none}
+  .doc-photo img,.result-card img{transition:none}
+  .photo-frame .plx-wrap{transform:none!important}
+}
+</style>
+<style>
+/* ============================================================
+   V5 — brand-pattern gap upgrade (see BRAND-PATTERN-BRIEF.md)
+   P0 conversion structure · P1 proof density · P2 design polish.
+   All copy is original demo content for Lumina Dental Studio.
+   ============================================================ */
+:root{
+  --fs-display:clamp(2.6rem,5.2vw,3.9rem);
+  --fs-h2:clamp(1.9rem,3.4vw,2.5rem);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+  --ease-micro:cubic-bezier(.2,0,0,1);
+}
+/* Type scale (D11): display ambition, tight tracking */
+.hero h1{font-size:var(--fs-display);line-height:1.08;letter-spacing:-.02em}
+h2{font-size:var(--fs-h2);line-height:1.15}
+@media(max-width:680px){.hero h1{font-size:clamp(2rem,9.6vw,2.5rem)}}
+/* Frosted sticky header (D14) */
+header{background:rgba(255,255,255,.92);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){header{background:#fff}}
+/* Motion tokens (D13): reveals decelerate, hovers go micro.
+   The before/after knob keeps its signature spring. */
+.reveal{transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
+.btn{transition:transform .25s var(--ease-micro),box-shadow .25s var(--ease-micro),background .25s var(--ease-micro),color .25s var(--ease-micro)}
+.btn-primary::after{transition:transform .7s var(--ease-out)}
+.nav-links a::after{transition:transform .25s var(--ease-micro)}
+.service-card,.doc-card,.stat{transition-timing-function:var(--ease-micro)}
+.ba-card{transition:opacity .8s var(--ease-out),transform .55s var(--ease-micro),background .25s var(--ease-micro),clip-path .95s var(--ease-out)}
+.testi-track{transition:transform .65s var(--ease-out)}
+.field input,.field select,.field textarea{transition:border-color .25s var(--ease-micro),box-shadow .25s var(--ease-micro)}
+/* Proof eyebrow above the H1 (D1) */
+.proof-eyebrow{font-size:.8125rem;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--accent-dark)}
+.proof-eyebrow::before{display:none}
+/* Hero lines under the CTA pair (D7 emergency · D3 terms) */
+.hero-actions{margin-bottom:24px}
+.hero-emergency{font-weight:600;color:var(--ink-soft);margin-bottom:8px}
+.hero-emergency a{color:var(--accent-dark);font-weight:800;white-space:nowrap}
+.hero-emergency a:hover{text-decoration:underline}
+.hero-terms{font-size:.75rem;color:var(--muted);margin-bottom:30px}
+/* Offer-card terms (D3) */
+.offer-terms{margin-top:10px;font-size:.75rem;color:#cfe9ea;position:relative;z-index:1}
+/* Callback band (D5): the low-commitment second path */
+.callback-band{padding:36px 0}
+.callback-card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow-card);padding:32px 36px;display:grid;grid-template-columns:.85fr 1.15fr;gap:36px;align-items:center}
+.callback-card h2{font-size:clamp(1.5rem,2.6vw,1.9rem);margin-bottom:10px}
+.callback-card .callback-text p{color:var(--muted);font-size:.98rem}
+.callback-form .btn{width:100%;justify-content:center;margin-top:16px}
+@media(max-width:860px){.callback-card{grid-template-columns:1fr;gap:22px;padding:28px 24px}}
+/* Tinted testimonials band (D12) + reviews wall on desktop (D8) */
+.testimonials{background:var(--accent-soft)}
+@media(min-width:1021px){
+  .testi-viewport{overflow:visible}
+  .testi-track{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;transform:none!important;transition:none}
+  .testi-slide{min-width:0;padding:0}
+  .testi-card{height:100%;padding:32px 26px;display:flex;flex-direction:column}
+  .testi-card blockquote{font-size:1.04rem;line-height:1.55;flex:1}
+  .testi-dots{display:none}
+}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <div class="container">
+    <div class="tb-group">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Mon–Fri 8:00–19:00 · Sat 9:00–15:00</span>
+      <span class="tb-hide"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> 428 Willow Creek Drive, Austin, TX</span>
+    </div>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Call us: <a href="tel:+15125550142">(512) 555-0142</a></span>
+  </div>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader">
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <!-- EDIT: practice name -->
+      <a class="logo" href="#top" aria-label="Lumina Dental Studio home">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 3.2c-1.5-1.3-3.4-2-5.3-1.7C4 2 2.4 4 2.6 6.6c.1 1.9 1 3.4 1.6 5.2.5 1.6.9 3.4 1.3 5.2.3 1.4.6 3.2 2 3.4 1.7.3 1.9-1.9 2.4-3.2.3-.9.7-1.7 1.1-1.7s.8.8 1.1 1.7c.5 1.3.7 3.5 2.4 3.2 1.4-.2 1.7-2 2-3.4.4-1.8.8-3.6 1.3-5.2.6-1.8 1.5-3.3 1.6-5.2.2-2.6-1.4-4.6-4.1-5.1-1.9-.3-3.8.4-5.3 1.7z"/></svg></span>
+        <span>Lumina<small>Dental Studio</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing &amp; Insurance</a>
+        <a href="#book">New Patients</a>
+        <a href="#team">Team</a>
+        <a href="#reviews">Reviews</a>
+      </div>
+      <div class="nav-cta">
+        <a class="nav-phone" href="tel:+15125550142"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>(512) 555-0142</a>
+        <a class="btn btn-primary" href="#book">Book Appointment</a>
+        <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing &amp; Insurance</a>
+      <a href="#book">New Patients</a>
+      <a href="#team">Team</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#book">Book Appointment</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-sparkles" aria-hidden="true" data-plx="-0.07">
+    <i style="width:120px;height:120px;top:6%;right:38%"></i>
+    <i style="width:64px;height:64px;top:52%;right:6%;animation-delay:1.6s"></i>
+    <i style="width:88px;height:88px;bottom:4%;right:30%;animation-delay:3.1s"></i>
+  </div>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow proof-eyebrow reveal">★ 4.9 · 850+ Google reviews · Invisalign® Provider</span>
+      <h1 class="reveal reveal-d1">A healthier smile, <span class="accent-word">without the anxiety.<svg viewBox="0 0 200 10" preserveAspectRatio="none"><path d="M2 8 Q 100 -4 198 6" fill="none" stroke="#0e7c86" stroke-width="4" stroke-linecap="round" opacity=".45"/></svg></span></h1>
+      <p class="hero-sub reveal reveal-d2">Implants, Invisalign® clear aligners and family dentistry in Austin, TX — gentle, judgement-free care with modern technology, and most PPO insurance accepted.</p>
+      <div class="hero-actions reveal reveal-d3">
+        <a class="btn btn-primary" href="#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Book an Appointment</a>
+        <a class="btn btn-ghost" href="tel:+15125550142"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Call (512) 555-0142</a>
+      </div>
+      <p class="hero-emergency reveal reveal-d4">Toothache or a broken tooth? We hold same-day emergency slots every morning — <a href="tel:+15125550142">call (512) 555-0142</a>.</p>
+      <p class="hero-terms reveal reveal-d4">*New-patient exam &amp; X-rays $59 — for new patients without insurance. Offer ends Dec 31.</p>
+      <div class="hero-points reveal reveal-d5">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Same-week appointments</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Most PPO plans accepted</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 0% financing available</span>
+      </div>
+    </div>
+    <div class="hero-visual reveal reveal-d2">
+      <figure class="hero-photo photo-frame">
+        <div class="plx-wrap" data-plx="0.04"><img class="kb" src="assets/hero-clinic.jpg" alt="Inside the Lumina Dental Studio treatment suite — a bright, modern dental clinic in Austin, Texas" width="1920" height="1280" fetchpriority="high" decoding="async"></div>
+        <figcaption class="photo-chip">Inside our Willow Creek studio</figcaption>
+      </figure>
+      <div class="hero-badge">
+        <div>
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>
+          </div>
+          <strong>4.9 / 5 rating</strong>
+        </div>
+        <small>from 850+<br>Google reviews</small>
+      </div>
+      <div class="hero-card">
+        <div class="tooth-scene" aria-hidden="true">
+          <svg class="tooth-big" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 3.2c-1.5-1.3-3.4-2-5.3-1.7C4 2 2.4 4 2.6 6.6c.1 1.9 1 3.4 1.6 5.2.5 1.6.9 3.4 1.3 5.2.3 1.4.6 3.2 2 3.4 1.7.3 1.9-1.9 2.4-3.2.3-.9.7-1.7 1.1-1.7s.8.8 1.1 1.7c.5 1.3.7 3.5 2.4 3.2 1.4-.2 1.7-2 2-3.4.4-1.8.8-3.6 1.3-5.2.6-1.8 1.5-3.3 1.6-5.2.2-2.6-1.4-4.6-4.1-5.1-1.9-.3-3.8.4-5.3 1.7z"/></svg>
+          <span class="shine"></span>
+          <span class="spark" style="width:20px;height:20px;top:-6px;right:2px"><svg viewBox="0 0 24 24"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span>
+          <span class="spark" style="width:13px;height:13px;bottom:16px;left:-8px;animation-delay:1.2s"><svg viewBox="0 0 24 24"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span>
+          <span class="bubble" style="width:11px;height:11px;left:10px;bottom:6px"></span>
+          <span class="bubble" style="width:7px;height:7px;right:14px;bottom:2px;animation-delay:1.7s"></span>
+          <span class="bubble" style="width:9px;height:9px;left:44px;bottom:0;animation-delay:3s"></span>
+        </div>
+        <h3>New patient special</h3>
+        <p>A complete exam and digital X-rays for new patients — find out exactly where your smile stands, for one simple price.</p>
+        <p style="margin-top:14px;font-size:1.5rem;font-weight:800;color:#fff">$59 <span style="font-size:.85rem;font-weight:600;color:#8fd6dc">· exam &amp; X-rays</span></p>
+        <p class="offer-terms">For new patients without insurance. Offer ends Dec 31.</p>
+      </div>
+      <div class="hero-stats" data-plx="0.035">
+        <div class="stat"><div class="num"><span class="counter" data-target="18">0</span>+</div><div class="lbl">Years of care</div></div>
+        <div class="stat"><div class="num"><span class="counter" data-target="12">0</span>k+</div><div class="lbl">Happy patients</div></div>
+        <div class="stat"><div class="num"><span class="counter" data-target="850">0</span>+</div><div class="lbl">Implants placed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CALLBACK BAND (v5) ===================== -->
+<section class="callback-band" aria-label="Request a callback">
+  <div class="container">
+    <div class="callback-card reveal">
+      <div class="callback-text">
+        <h2>Not ready to book?</h2>
+        <p>Leave your number and we will call you back within one business hour — ask us anything first, with no pressure and no obligation to book.</p>
+      </div>
+      <form id="callbackForm" class="callback-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="cbName">Full name *</label><input id="cbName" name="name" type="text" placeholder="e.g. Jordan Miller" required></div>
+          <div class="field"><label for="cbPhone">Phone *</label><input id="cbPhone" name="phone" type="tel" placeholder="(512) 555-0000" required></div>
+          <div class="field"><label for="cbService">Treatment (optional)</label>
+            <select id="cbService" name="service">
+              <option value="">Not sure yet</option>
+              <option>Check-up &amp; clean</option><option>Dental implants</option><option>Invisalign® / braces</option>
+              <option>Whitening / veneers</option><option>Root canal</option><option>Tooth pain / emergency</option><option>Something else</option>
+            </select></div>
+          <div class="field"><label for="cbMsg">Message (optional)</label><input id="cbMsg" name="message" type="text" placeholder="Anything we should know?"></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Request Callback</button>
+        <p class="form-privacy">We reply within one business hour. Your details are never shared with third parties.</p>
+      </form>
+      <div class="form-success" id="callbackSuccess" role="status">
+        <div class="ok-ring"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Thanks — we'll be in touch!</h3>
+        <p id="cbSuccessText">We'll call you back shortly.</p>
+        <button class="btn btn-ghost" id="cbAgain" style="margin-top:18px">Make another request</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST STRIP ===================== -->
+<div class="trust-strip">
+  <div class="container">
+    <span class="t-label">Trusted &amp; accredited</span>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 11.5 2 2 4-4.5"/></svg> ADA Member Practice</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-2 8 5.5-3 5.5 3-2-8"/></svg> Invisalign® Provider</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="M12 8v6M9 11h6"/></svg> Licensed &amp; Insured</div>
+    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> 5-Year Treatment Guarantee</div>
+  </div>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2>Complete care for every smile</h2>
+      <p>One practice for the whole family — from six-month check-ups to full smile restorations, all under one roof.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2c-1.5-1.3-3.4-2-5.3-1.7C4 2 2.4 4 2.6 6.6c.1 1.9 1 3.4 1.6 5.2.5 1.6.9 3.4 1.3 5.2.3 1.4.6 3.2 2 3.4 1.7.3 1.9-1.9 2.4-3.2.3-.9.7-1.7 1.1-1.7s.8.8 1.1 1.7c.5 1.3.7 3.5 2.4 3.2 1.4-.2 1.7-2 2-3.4.4-1.8.8-3.6 1.3-5.2.6-1.8 1.5-3.3 1.6-5.2.2-2.6-1.4-4.6-4.1-5.1-1.9-.3-3.8.4-5.3 1.7z"/></svg></div>
+        <h3>General &amp; Family Dentistry</h3>
+        <p>Exams, digital X-rays, hygiene cleans and tooth-coloured fillings that keep the whole family smiling year after year.</p>
+        <div class="service-price">Check-up &amp; clean from $99</div>
+        <a class="service-link" href="#book">Book a check-up <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="service-card reveal reveal-d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v4l-1.5 3h7L14 7V3"/><path d="M8.5 10 7 21h10l-1.5-11"/><path d="M7.6 14h8.8M8.2 17.5h7.6"/></svg></div>
+        <h3>Dental Implants</h3>
+        <p>Permanent, natural-feeling replacements for missing teeth — planned with 3D imaging and placed in a single visit where possible.</p>
+        <div class="service-price">Single implant from $1,899</div>
+        <a class="service-link" href="#book">Get a free consult <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="service-card reveal reveal-d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10c2.5-2 5.3-3 8-3s5.5 1 8 3c-2.5 4.5-5.3 7-8 7s-5.5-2.5-8-7z"/><path d="M8 8.5v7M12 7.5v9M16 8.5v7"/></svg></div>
+        <h3>Orthodontics &amp; Invisalign®</h3>
+        <p>Straighten your teeth discreetly with clear aligners, or choose modern low-profile braces for teens and adults.</p>
+        <div class="service-price">Invisalign® from $3,499</div>
+        <a class="service-link" href="#book">Check candidacy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M18.4 5.6l-2.1 2.1M21 12h-3M18.4 18.4l-2.1-2.1M12 18v3M7.8 16.3l-2.2 2.1M6 12H3M7.8 7.7 5.6 5.6"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Porcelain veneers, professional whitening and complete smile design — preview your new smile digitally before we begin.</p>
+        <div class="service-price">Whitening from $299</div>
+        <a class="service-link" href="#book">Design my smile <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="service-card reveal reveal-d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6a5.5 5.5 0 0 0-9.8-3.4L12 6.2l1-1a5.5 5.5 0 0 1 9.8 3.4c0 4-4.4 6.2-6.9 9.9-.8 1.2-1.6 3-3.9 3s-3.1-1.8-3.9-3C5.6 14.8 1.2 12.6 1.2 8.6" transform="scale(.92) translate(1 1)"/><path d="M7 21h10"/></svg></div>
+        <h3>Root Canal Therapy</h3>
+        <p>Save an infected tooth with gentle, microscope-assisted endodontics — most treatments completed in a single appointment.</p>
+        <div class="service-price">From $649</div>
+        <a class="service-link" href="#book">Relieve my pain <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="service-card reveal reveal-d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M5.5 5.5 3 3M21 3l-2.5 2.5"/></svg></div>
+        <h3>Emergency Dentistry</h3>
+        <p>Toothache, a broken tooth or a lost crown? We reserve same-day emergency slots every morning — call and we will fit you in.</p>
+        <div class="service-price">Same-day slots daily</div>
+        <a class="service-link" href="tel:+15125550142">Call (512) 555-0142 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section id="why">
+  <div class="container why-grid">
+    <div class="why-visual reveal reveal-scale">
+      <div class="why-panel">
+        <div class="why-scene" data-plx="0.05" aria-hidden="true">
+          <svg class="big-tooth" viewBox="0 0 24 24" fill="#ffffff"><path d="M12 3.2c-1.5-1.3-3.4-2-5.3-1.7C4 2 2.4 4 2.6 6.6c.1 1.9 1 3.4 1.6 5.2.5 1.6.9 3.4 1.3 5.2.3 1.4.6 3.2 2 3.4 1.7.3 1.9-1.9 2.4-3.2.3-.9.7-1.7 1.1-1.7s.8.8 1.1 1.7c.5 1.3.7 3.5 2.4 3.2 1.4-.2 1.7-2 2-3.4.4-1.8.8-3.6 1.3-5.2.6-1.8 1.5-3.3 1.6-5.2.2-2.6-1.4-4.6-4.1-5.1-1.9-.3-3.8.4-5.3 1.7z"/></svg>
+          <span class="spark" style="width:22px;height:22px;top:2px;right:8px;color:#0e7c86"><svg viewBox="0 0 24 24"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span>
+          <span class="spark" style="width:14px;height:14px;bottom:38px;left:2px;color:#0e7c86;animation-delay:1.4s"><svg viewBox="0 0 24 24"><path d="M12 2l2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2z"/></svg></span>
+          <div class="shield-badge">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z" fill="#e6f4f4" stroke="#0e7c86" stroke-width="1.6"/><path class="check-draw" d="m8.8 11.6 2.2 2.2 4.2-4.6" stroke="#0a5a61" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="why-quote">
+          <p>"We treat people, not just teeth. If you're nervous, we slow down. If you're busy, we speed up. Your comfort sets the pace."</p>
+          <strong>— Dr. Sarah Mitchell, Founder</strong>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Why Lumina</span>
+        <h2>Dentistry that fits your life</h2>
+        <p>No lectures, no surprise bills, no rushed appointments. Just honest advice and dentistry done properly.</p>
+      </div>
+      <div class="why-list">
+        <div class="journey-track" aria-hidden="true"><div class="journey-fill"></div></div>
+        <div class="why-item reveal"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Honest, upfront pricing</h3><p>You approve a written treatment plan with exact costs before we start. The price we quote is the price you pay.</p></div></div>
+        <div class="why-item reveal reveal-d1"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Gentle with anxious patients</h3><p>Noise-cancelling headphones, weighted blankets and sedation options — around 40% of our patients arrived nervous.</p></div></div>
+        <div class="why-item reveal reveal-d2"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Modern technology, less drilling</h3><p>3D imaging, digital impressions (no gag-inducing moulds) and laser dentistry for faster, quieter treatment.</p></div></div>
+        <div class="why-item reveal reveal-d3"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><h3>Evening &amp; Saturday hours</h3><p>Open until 7pm on weekdays and Saturday mornings, so treatment never has to compete with work or school.</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <figure class="feature-photo photo-frame reveal">
+      <div class="plx-wrap" data-plx="0.035"><img src="assets/treatment.jpg" alt="A Lumina dentist gently treating a relaxed patient with modern dental equipment" width="1920" height="1280" loading="lazy" decoding="async"></div>
+      <figcaption class="photo-chip">Comfort-first treatment rooms</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== SMILE GALLERY ===================== -->
+<section class="gallery" id="results">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Smile Gallery</span>
+      <h2>Real patients. Real transformations.</h2>
+      <p>Drag the slider on each photo to compare before and after treatment at Lumina.</p>
+    </div>
+    <div class="ba-grid">
+      <article class="ba-card reveal">
+        <div class="ba-frame" data-ba role="slider" aria-label="Before and after comparison: professional whitening" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+          <div class="ba-before">
+            <svg class="ba-smile" viewBox="0 0 220 100" aria-hidden="true"><path d="M8 34 Q110 2 212 34 L212 48 Q110 16 8 48 Z" fill="#c98a94"/><g fill="#c9b478"><rect x="26" y="28" width="21" height="32" rx="8"/><rect x="51" y="21" width="22" height="39" rx="8"/><rect x="76" y="17" width="23" height="43" rx="9"/><rect x="102" y="16" width="23" height="44" rx="9"/><rect x="128" y="17" width="23" height="43" rx="9"/><rect x="154" y="21" width="22" height="39" rx="8"/><rect x="180" y="28" width="21" height="32" rx="8"/></g><ellipse cx="88" cy="42" rx="7" ry="10" fill="#a68d4e" opacity=".55"/><ellipse cx="140" cy="38" rx="6" ry="9" fill="#a68d4e" opacity=".5"/></svg>
+          </div>
+          <div class="ba-after-wrap">
+            <div class="ba-after">
+              <svg class="ba-smile" viewBox="0 0 220 100" aria-hidden="true"><path d="M8 34 Q110 2 212 34 L212 48 Q110 16 8 48 Z" fill="#ef9db0"/><g fill="#ffffff" stroke="#d7e7e7"><rect x="26" y="28" width="21" height="32" rx="8"/><rect x="51" y="21" width="22" height="39" rx="8"/><rect x="76" y="17" width="23" height="43" rx="9"/><rect x="102" y="16" width="23" height="44" rx="9"/><rect x="128" y="17" width="23" height="43" rx="9"/><rect x="154" y="21" width="22" height="39" rx="8"/><rect x="180" y="28" width="21" height="32" rx="8"/></g></svg>
+            </div>
+          </div>
+          <span class="ba-tag before">Before</span><span class="ba-tag after">After</span>
+          <div class="ba-handle"><div class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div></div>
+        </div>
+        <div class="ba-info"><h3>Professional Whitening</h3><p>Jessica L. · one 60-minute visit · 6 shades brighter</p></div>
+      </article>
+      <article class="ba-card reveal reveal-d1">
+        <div class="ba-frame" data-ba role="slider" aria-label="Before and after comparison: porcelain veneers" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+          <div class="ba-before">
+            <svg class="ba-smile" viewBox="0 0 220 100" aria-hidden="true"><path d="M8 34 Q110 2 212 34 L212 48 Q110 16 8 48 Z" fill="#c98a94"/><g fill="#d3c08a"><rect x="26" y="28" width="21" height="30" rx="8"/><rect x="51" y="21" width="22" height="34" rx="8"/><rect x="76" y="17" width="23" height="38" rx="9"/><rect x="102" y="16" width="23" height="41" rx="9"/><rect x="128" y="17" width="23" height="36" rx="9"/><rect x="154" y="21" width="22" height="33" rx="8"/><rect x="180" y="28" width="21" height="30" rx="8"/></g><path d="M102 57 l6 -6 4 5 -5 5z" fill="#8f7c46"/></svg>
+          </div>
+          <div class="ba-after-wrap">
+            <div class="ba-after">
+              <svg class="ba-smile" viewBox="0 0 220 100" aria-hidden="true"><path d="M8 34 Q110 2 212 34 L212 48 Q110 16 8 48 Z" fill="#ef9db0"/><g fill="#ffffff" stroke="#d7e7e7"><rect x="26" y="28" width="21" height="34" rx="8"/><rect x="51" y="21" width="22" height="41" rx="8"/><rect x="76" y="17" width="23" height="45" rx="9"/><rect x="102" y="16" width="23" height="46" rx="9"/><rect x="128" y="17" width="23" height="45" rx="9"/><rect x="154" y="21" width="22" height="41" rx="8"/><rect x="180" y="28" width="21" height="34" rx="8"/></g></svg>
+            </div>
+          </div>
+          <span class="ba-tag before">Before</span><span class="ba-tag after">After</span>
+          <div class="ba-handle"><div class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div></div>
+        </div>
+        <div class="ba-info"><h3>Porcelain Veneers</h3><p>Danielle K. · eight veneers · completed in 2 visits</p></div>
+      </article>
+      <article class="ba-card reveal reveal-d2">
+        <div class="ba-frame" data-ba role="slider" aria-label="Before and after comparison: Invisalign" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+          <div class="ba-before">
+            <svg class="ba-smile" viewBox="0 0 220 100" aria-hidden="true"><path d="M8 34 Q110 2 212 34 L212 48 Q110 16 8 48 Z" fill="#c98a94"/><g fill="#d8c88f"><rect x="26" y="28" width="21" height="32" rx="8" transform="rotate(-5 36 40)"/><rect x="51" y="21" width="22" height="39" rx="8" transform="rotate(4 62 38)"/><rect x="76" y="17" width="23" height="43" rx="9" transform="rotate(-6 87 36)"/><rect x="102" y="16" width="23" height="44" rx="9" transform="rotate(5 113 36)"/><rect x="128" y="17" width="23" height="43" rx="9" transform="rotate(-4 139 36)"/><rect x="154" y="21" width="22" height="39" rx="8" transform="rotate(6 165 38)"/><rect x="180" y="28" width="21" height="32" rx="8" transform="rotate(-5 190 40)"/></g></svg>
+          </div>
+          <div class="ba-after-wrap">
+            <div class="ba-after">
+              <svg class="ba-smile" viewBox="0 0 220 100" aria-hidden="true"><path d="M8 34 Q110 2 212 34 L212 48 Q110 16 8 48 Z" fill="#ef9db0"/><g fill="#ffffff" stroke="#d7e7e7"><rect x="26" y="28" width="21" height="32" rx="8"/><rect x="51" y="21" width="22" height="39" rx="8"/><rect x="76" y="17" width="23" height="43" rx="9"/><rect x="102" y="16" width="23" height="44" rx="9"/><rect x="128" y="17" width="23" height="43" rx="9"/><rect x="154" y="21" width="22" height="39" rx="8"/><rect x="180" y="28" width="21" height="32" rx="8"/></g></svg>
+            </div>
+          </div>
+          <span class="ba-tag before">Before</span><span class="ba-tag after">After</span>
+          <div class="ba-handle"><div class="ba-knob"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></div></div>
+        </div>
+        <div class="ba-info"><h3>Invisalign® Clear Aligners</h3><p>Tom H. · 11 months of treatment · no braces, no wires</p></div>
+      </article>
+    </div>
+    <h3 class="results-title reveal">Smiles we're proud of</h3>
+    <div class="results-row">
+      <figure class="result-card photo-frame reveal">
+        <div class="plx-wrap" data-plx="0.03"><img src="assets/smile-1.jpg" alt="Smiling Lumina patient showing bright, even teeth after porcelain veneer treatment" width="1120" height="2240" loading="lazy" decoding="async"></div>
+        <figcaption class="result-cap"><strong>Porcelain Veneers</strong><span>Completed in two visits</span></figcaption>
+      </figure>
+      <figure class="result-card photo-frame reveal reveal-d1">
+        <div class="plx-wrap" data-plx="0.03"><img src="assets/smile-2.jpg" alt="Smiling Lumina patient with noticeably whiter teeth after a professional whitening session" width="1280" height="1920" loading="lazy" decoding="async"></div>
+        <figcaption class="result-cap"><strong>Professional Whitening</strong><span>One 60-minute session</span></figcaption>
+      </figure>
+      <figure class="result-card photo-frame reveal reveal-d2">
+        <div class="plx-wrap" data-plx="0.03"><img src="assets/smile-3.jpg" alt="A child smiling alongside a parent during a gentle family check-up at Lumina Dental Studio" width="1280" height="1920" loading="lazy" decoding="async"></div>
+        <figcaption class="result-cap"><strong>Family Dentistry</strong><span>Gentle first visits for kids</span></figcaption>
+      </figure>
+    </div>
+    <p class="gallery-note">Photos shown are illustrative renders for demonstration. Individual results vary — book a consultation for a personalised preview.</p>
+  </div>
+</section>
+
+<!-- ===================== TEAM ===================== -->
+<section id="team">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Meet the Team</span>
+      <h2>The doctors behind the smiles</h2>
+      <p>Experienced, board-certified and genuinely friendly — get to know the people who will look after you.</p>
+    </div>
+    <div class="team-grid">
+      <article class="doc-card reveal">
+        <div class="doc-photo doc-1"><span class="initials">SM</span><img src="assets/doctor-1.jpg" alt="Portrait of Dr. Sarah Mitchell, founder and cosmetic dentist at Lumina Dental Studio" width="1280" height="1920" loading="lazy" decoding="async"></div>
+        <div class="doc-body">
+          <h3>Dr. Sarah Mitchell, DDS</h3>
+          <div class="doc-role">Founder · Cosmetic Dentistry</div>
+          <p>18 years of practice and a passion for smile design. Sarah leads our cosmetic and veneer work.</p>
+          <div class="doc-creds"><span>DDS, UT Austin</span><span>AACD Member</span></div>
+        </div>
+      </article>
+      <article class="doc-card reveal reveal-d1">
+        <div class="doc-photo doc-2"><span class="initials">JO</span><img src="assets/doctor-2.jpg" alt="Portrait of Dr. James Okafor, implantology and oral surgery specialist at Lumina Dental Studio" width="1280" height="1920" loading="lazy" decoding="async"></div>
+        <div class="doc-body">
+          <h3>Dr. James Okafor, DMD</h3>
+          <div class="doc-role">Implantology &amp; Oral Surgery</div>
+          <p>Over 850 implants placed with a 98.6% success rate. James handles implants, grafts and extractions.</p>
+          <div class="doc-creds"><span>DMD, Tufts</span><span>ICOI Fellow</span></div>
+        </div>
+      </article>
+      <article class="doc-card reveal reveal-d2">
+        <div class="doc-photo doc-3"><span class="initials">ER</span></div>
+        <div class="doc-body">
+          <h3>Dr. Elena Rodriguez, DDS, MS</h3>
+          <div class="doc-role">Orthodontics · Invisalign®</div>
+          <p>A certified Invisalign® provider who has straightened 1,200+ smiles, from teens to grandparents.</p>
+          <div class="doc-creds"><span>MS Orthodontics</span><span>Top 1% Provider</span></div>
+        </div>
+      </article>
+      <article class="doc-card reveal reveal-d3">
+        <div class="doc-photo doc-4"><span class="initials">DK</span></div>
+        <div class="doc-body">
+          <h3>Dr. David Kim, DDS</h3>
+          <div class="doc-role">Family &amp; Emergency Care</div>
+          <p>Our patients' favourite for painless root canals and putting nervous patients completely at ease.</p>
+          <div class="doc-creds"><span>DDS, NYU</span><span>Endodontics Cert.</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Patient Stories</span>
+      <h2>Loved by Austin families</h2>
+      <p>Rated 4.9 out of 5 across 850+ Google reviews — real words from real Austin patients.</p>
+    </div>
+    <div class="testi-viewport reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-slide"><div class="testi-card">
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+          <blockquote>"I avoided dentists for six years out of pure fear. The team at Lumina never judged me once — and my implant feels so natural I forget it's not my real tooth."</blockquote>
+          <div class="testi-who"><strong>Marcus T.</strong><span>Implant patient · Hyde Park</span></div>
+        </div></div>
+        <div class="testi-slide"><div class="testi-card">
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+          <blockquote>"Booked online at 9pm, was in the chair at 8am with a cracked tooth — and out by 9, completely pain-free. This is how dentistry should be."</blockquote>
+          <div class="testi-who"><strong>Priya S.</strong><span>Emergency patient · Mueller</span></div>
+        </div></div>
+        <div class="testi-slide"><div class="testi-card">
+          <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></div>
+          <blockquote>"Our whole family comes here — my kids actually ask when their next visit is. Dr. Rodriguez straightened my daughter's teeth without a single wire."</blockquote>
+          <div class="testi-who"><strong>The Alvarez Family</strong><span>Family patients · Cedar Park</span></div>
+        </div></div>
+      </div>
+    </div>
+    <div class="testi-dots" id="testiDots" role="tablist" aria-label="Testimonial navigation"></div>
+  </div>
+</section>
+
+<!-- ===================== PRICING & INSURANCE ===================== -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Pricing &amp; Insurance</span>
+      <h2>Clear prices. No surprises.</h2>
+      <p>Guide prices for our most common treatments — you'll always receive an exact written quote before any work begins.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-row"><div class="p-name">New patient exam &amp; X-rays<small>Full assessment + digital imaging</small></div><div class="p-val">$59</div></div>
+        <div class="price-row"><div class="p-name">Hygiene clean &amp; polish<small>60 minutes with our hygienist</small></div><div class="p-val">$99</div></div>
+        <div class="price-row"><div class="p-name">Tooth-coloured filling<small>Per tooth, includes anaesthetic</small></div><div class="p-val"><small>from</small> $149</div></div>
+        <div class="price-row"><div class="p-name">Professional whitening<small>In-chair, one visit</small></div><div class="p-val">$299</div></div>
+        <div class="price-row"><div class="p-name">Root canal therapy<small>Per tooth, microscope-assisted</small></div><div class="p-val"><small>from</small> $649</div></div>
+        <div class="price-row"><div class="p-name">Porcelain crown<small>Lab-crafted, 5-year guarantee</small></div><div class="p-val"><small>from</small> $899</div></div>
+        <div class="price-row"><div class="p-name">Dental implant<small>Includes abutment &amp; crown</small></div><div class="p-val"><small>from</small> $1,899</div></div>
+        <div class="price-row"><div class="p-name">Invisalign® full treatment<small>Includes retainers &amp; reviews</small></div><div class="p-val"><small>from</small> $3,499</div></div>
+      </div>
+      <div class="insurance-card reveal reveal-d1 reveal-scale">
+        <h3>We work with your insurance</h3>
+        <p>We're in-network with most major PPO plans and we'll verify your coverage and file claims for you — no paperwork on your side.</p>
+        <div class="ins-logos">
+          <span>Delta Dental</span><span>Cigna</span><span>Aetna</span><span>MetLife</span><span>Guardian</span><span>Humana</span><span>UnitedHealthcare</span><span>BCBS</span>
+        </div>
+        <div class="finance-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg>
+          <span><strong>No insurance?</strong> Spread any treatment over 12 months at 0% APR, or join Lumina Care Plan from $29/mo for cleans, exams and member-only prices.</span>
+        </div>
+        <a class="btn btn-light" href="#book" style="margin-top:24px">Check My Coverage</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BOOKING ===================== -->
+<section class="booking" id="book">
+  <div class="container booking-grid">
+    <div class="booking-info reveal">
+      <span class="eyebrow">Book a Visit</span>
+      <h2>Request your appointment</h2>
+      <p>Tell us what you need and when suits you — we'll confirm your exact time by text within one business hour.</p>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+        <div><h3>Visit us</h3><p>428 Willow Creek Drive, Suite 12<br>Austin, TX 78746 — free parking on site</p></div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg></span>
+        <div><h3>Call or email</h3><p><a href="tel:+15125550142" style="font-weight:700;color:var(--accent-dark)">(512) 555-0142</a><br><a href="mailto:hello@luminadental.example">hello@luminadental.example</a></p></div>
+      </div>
+      <div class="info-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div style="flex:1"><h3>Opening hours</h3>
+          <table class="hours-table" id="hoursTable">
+            <tr data-day="1"><td>Monday</td><td>8:00 AM – 7:00 PM</td></tr>
+            <tr data-day="2"><td>Tuesday</td><td>8:00 AM – 7:00 PM</td></tr>
+            <tr data-day="3"><td>Wednesday</td><td>8:00 AM – 7:00 PM</td></tr>
+            <tr data-day="4"><td>Thursday</td><td>8:00 AM – 7:00 PM</td></tr>
+            <tr data-day="5"><td>Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+            <tr data-day="6"><td>Saturday</td><td>9:00 AM – 3:00 PM</td></tr>
+            <tr data-day="0"><td>Sunday</td><td>Emergencies only</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="form-card reveal reveal-d1">
+      <form id="bookForm" novalidate>
+        <h3>Appointment request</h3>
+        <p>Fields marked * are required. This form is a demo — connect it to your booking system or inbox to go live.</p>
+        <div class="form-grid">
+          <div class="field"><label for="fName">Full name *</label><input id="fName" name="name" type="text" placeholder="e.g. Jordan Miller" required></div>
+          <div class="field"><label for="fPhone">Phone *</label><input id="fPhone" name="phone" type="tel" placeholder="(512) 555-0000" required></div>
+          <div class="field full"><label for="fEmail">Email</label><input id="fEmail" name="email" type="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="fService">Treatment *</label>
+            <select id="fService" name="service" required>
+              <option value="">Select a treatment…</option>
+              <option>Check-up &amp; clean</option><option>Dental implants</option><option>Invisalign® / braces</option>
+              <option>Whitening / veneers</option><option>Root canal</option><option>Tooth pain / emergency</option><option>Something else</option>
+            </select></div>
+          <div class="field"><label for="fDoctor">Preferred doctor</label>
+            <select id="fDoctor" name="doctor">
+              <option value="">No preference</option><option>Dr. Sarah Mitchell</option><option>Dr. James Okafor</option><option>Dr. Elena Rodriguez</option><option>Dr. David Kim</option>
+            </select></div>
+          <div class="field"><label for="fDate">Preferred date</label><input id="fDate" name="date" type="date"></div>
+          <div class="field"><label for="fTime">Preferred time</label>
+            <select id="fTime" name="time"><option value="">No preference</option><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Evening</option></select></div>
+          <div class="field full"><label for="fMsg">Anything we should know?</label><textarea id="fMsg" name="message" placeholder="e.g. I'm a nervous patient / I have Delta Dental insurance…"></textarea></div>
+        </div>
+        <button class="btn btn-primary" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Request Appointment</button>
+        <p class="form-privacy">We reply within one business hour. Your details are never shared with third parties.</p>
+      </form>
+      <div class="form-success" id="formSuccess" role="status">
+        <div class="ok-ring"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Request received — thank you!</h3>
+        <p id="successText">We'll text you shortly to confirm your appointment time.</p>
+        <button class="btn btn-ghost" id="bookAgain" style="margin-top:18px">Make another request</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT BAND ===================== -->
+<section class="contact-band" id="contact" style="padding:70px 0">
+  <div class="container">
+    <div>
+      <h3>Find us</h3>
+      <div class="map-tile" aria-hidden="true">
+        <div class="map-pin"><svg viewBox="0 0 24 24"><path d="M12 22s-7.2-5.7-7.2-11.2a7.2 7.2 0 1 1 14.4 0C19.2 16.3 12 22 12 22z"/><circle cx="12" cy="10.6" r="2.7" fill="#122c34"/></svg><span>Lumina Dental Studio</span></div>
+      </div>
+      <p style="margin-top:16px">Two minutes from Willow Creek Mall, with free patient parking right outside the door.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-5.5-7-11a7 7 0 1 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg> 428 Willow Creek Drive, Suite 12, Austin, TX 78746</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> <a href="tel:+15125550142">(512) 555-0142</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg> <a href="mailto:hello@luminadental.example">hello@luminadental.example</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Mon–Fri 8–7 · Sat 9–3 · Sun emergencies only</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Quick links</h3>
+      <ul>
+        <li><a href="#services">Services &amp; treatments</a></li>
+        <li><a href="#results">Smile gallery</a></li>
+        <li><a href="#team">Meet our doctors</a></li>
+        <li><a href="#pricing">Pricing &amp; insurance</a></li>
+        <li><a href="#book">Book an appointment</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Lumina Dental Studio. All rights reserved.</span>
+    <span>Privacy · Terms · Accessibility</span>
+  </div>
+</footer>
+
+<a class="btn btn-primary float-book" href="#book">Book an Appointment</a>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Sticky header shadow ---------- */
+  var header = document.getElementById('siteHeader');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 10); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('burgerBtn');
+  var menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* ---------- Scroll-reveal ---------- */
+  var revealIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('visible'); revealIO.unobserve(en.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ revealIO.observe(el); });
+
+  /* ---------- Animated counters ---------- */
+  function animateCounter(el){
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var dur = 1600, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString('en-US');
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var counterIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ animateCounter(en.target); counterIO.unobserve(en.target); }
+    });
+  }, {threshold:.5});
+  document.querySelectorAll('.counter').forEach(function(el){ counterIO.observe(el); });
+
+  /* ---------- Before / after sliders ---------- */
+  document.querySelectorAll('[data-ba]').forEach(function(frame){
+    var wrap = frame.querySelector('.ba-after-wrap');
+    var handle = frame.querySelector('.ba-handle');
+    function setPos(clientX){
+      var r = frame.getBoundingClientRect();
+      var pct = (clientX - r.left) / r.width * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      wrap.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      handle.style.left = pct + '%';
+      frame.setAttribute('aria-valuenow', Math.round(pct));
+    }
+    setPos(frame.getBoundingClientRect().left + frame.offsetWidth / 2);
+    var dragging = false;
+    frame.addEventListener('pointerdown', function(e){ dragging = true; frame.setPointerCapture(e.pointerId); setPos(e.clientX); });
+    frame.addEventListener('pointermove', function(e){ if(dragging) setPos(e.clientX); });
+    frame.addEventListener('pointerup', function(){ dragging = false; });
+    frame.addEventListener('pointercancel', function(){ dragging = false; });
+    frame.addEventListener('keydown', function(e){
+      var now = parseInt(frame.getAttribute('aria-valuenow'), 10) || 50;
+      if(e.key === 'ArrowLeft' || e.key === 'ArrowRight'){
+        e.preventDefault();
+        var pct = Math.max(2, Math.min(98, now + (e.key === 'ArrowRight' ? 5 : -5)));
+        var r = frame.getBoundingClientRect();
+        setPos(r.left + r.width * pct / 100);
+      }
+    });
+  });
+
+  /* ---------- Testimonial slider ---------- */
+  var track = document.getElementById('testiTrack');
+  var slides = track.children.length;
+  var dotsWrap = document.getElementById('testiDots');
+  var current = 0, timer = null;
+  for(var i = 0; i < slides; i++){
+    var d = document.createElement('button');
+    d.setAttribute('aria-label', 'Show testimonial ' + (i + 1));
+    (function(idx){ d.addEventListener('click', function(){ goTo(idx); restart(); }); })(i);
+    dotsWrap.appendChild(d);
+  }
+  var dots = dotsWrap.children;
+  function goTo(idx){
+    current = (idx + slides) % slides;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    for(var j = 0; j < slides; j++) dots[j].classList.toggle('active', j === current);
+  }
+  function restart(){ clearInterval(timer); timer = setInterval(function(){ goTo(current + 1); }, 6000); }
+  goTo(0); restart();
+  track.addEventListener('pointerenter', function(){ clearInterval(timer); });
+  track.addEventListener('pointerleave', restart);
+
+  /* ---------- Highlight today's opening hours ---------- */
+  var today = new Date().getDay();
+  document.querySelectorAll('#hoursTable tr').forEach(function(row){
+    if(parseInt(row.getAttribute('data-day'), 10) === today){
+      row.classList.add('today');
+      row.cells[0].textContent += ' · Today';
+    }
+  });
+
+  /* ---------- Booking form (demo) ---------- */
+  var form = document.getElementById('bookForm');
+  var success = document.getElementById('formSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('fName');
+    var phone = document.getElementById('fPhone');
+    var service = document.getElementById('fService');
+    var valid = true;
+    [name, phone, service].forEach(function(f){
+      if(!f.value.trim()){ valid = false; f.style.borderColor = '#d9534f'; f.style.boxShadow = '0 0 0 4px rgba(217,83,79,.13)'; }
+      else { f.style.borderColor = ''; f.style.boxShadow = ''; }
+    });
+    if(!valid) return;
+    var first = name.value.trim().split(' ')[0];
+    document.getElementById('successText').textContent =
+      'Thanks, ' + first + ' — your request for ' + service.value.toLowerCase() +
+      ' is with our front desk. We\'ll text ' + phone.value.trim() + ' within one business hour to confirm your time.';
+    form.style.display = 'none';
+    success.style.display = 'block';
+    success.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+  document.getElementById('bookAgain').addEventListener('click', function(){
+    form.reset(); form.style.display = ''; success.style.display = 'none';
+  });
+})();
+</script>
+<script>
+/* ---------- v2: scroll progress + gentle hero parallax ---------- */
+(function(){
+  "use strict";
+  var bar = document.querySelector('.scroll-progress');
+  var card = document.querySelector('.hero-card');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    if(bar && max > 0) bar.style.transform = 'scaleX(' + (h.scrollTop / max) + ')';
+    if(card){
+      if(!reduce && window.innerWidth > 1020 && window.scrollY < window.innerHeight){
+        card.style.transform = 'translateY(' + (window.scrollY * -0.045) + 'px)';
+      } else { card.style.transform = ''; }
+    }
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(update); }
+  }, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+<script>
+/* ============================================================
+   V3 scroll effects — multi-depth parallax, the smile-journey
+   progress line, and the gallery glow drift. One rAF-throttled
+   passive scroll handler; everything settles statically under
+   prefers-reduced-motion.
+   ============================================================ */
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var journeyList = document.querySelector('.why-list');
+  var track = document.querySelector('.journey-track');
+  var fill = document.querySelector('.journey-fill');
+  var items = journeyList ? Array.prototype.slice.call(journeyList.querySelectorAll('.why-item')) : [];
+  var gallery = document.querySelector('.gallery');
+  var plx = Array.prototype.slice.call(document.querySelectorAll('[data-plx]'));
+  var ticking = false;
+
+  function clamp01(v) { return Math.max(0, Math.min(1, v)); }
+
+  function update() {
+    ticking = false;
+    var vh = window.innerHeight;
+
+    /* Smile journey: the track ends exactly at the last step's
+       check, the fill follows scroll, steps light up as it passes */
+    if (journeyList && track && fill && items.length) {
+      var last = items[items.length - 1];
+      track.style.height = last.offsetTop + 'px';
+      track.style.bottom = 'auto';
+      if (reduce) {
+        fill.style.height = '100%';
+        items.forEach(function (it) { it.classList.add('passed'); });
+      } else {
+        var r = journeyList.getBoundingClientRect();
+        var p = clamp01((vh * 0.72 - r.top) / r.height);
+        fill.style.height = (p * 100).toFixed(1) + '%';
+        var lineEnd = r.top + p * r.height + 24;
+        items.forEach(function (it) {
+          var ir = it.getBoundingClientRect();
+          it.classList.toggle('passed', ir.top + ir.height * 0.5 < lineEnd);
+        });
+      }
+    }
+
+    /* Gallery glow drift */
+    if (gallery) {
+      var gr = gallery.getBoundingClientRect();
+      var gp = clamp01((vh - gr.top) / (vh + gr.height));
+      gallery.style.setProperty('--gx', ((gp - 0.5) * 140).toFixed(1) + 'px');
+    }
+
+    /* Multi-depth parallax (desktop only, reduced-motion off) */
+    if (!reduce && window.innerWidth > 1020) {
+      plx.forEach(function (el) {
+        var r2 = el.getBoundingClientRect();
+        if (r2.bottom < -120 || r2.top > vh + 120) return;
+        var d = (r2.top + r2.height / 2 - vh / 2) * parseFloat(el.getAttribute('data-plx'), 10);
+        d = Math.max(-60, Math.min(60, d));
+        el.style.transform = 'translate3d(0,' + d.toFixed(1) + 'px,0)';
+      });
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+</script>
+<script>
+/* ---------- v5: callback form (demo) — same validation +
+   success pattern as the booking form ---------- */
+(function(){
+  "use strict";
+  var form = document.getElementById('callbackForm');
+  if(!form) return;
+  var success = document.getElementById('callbackSuccess');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cbName');
+    var phone = document.getElementById('cbPhone');
+    var service = document.getElementById('cbService');
+    var valid = true;
+    [name, phone].forEach(function(f){
+      if(!f.value.trim()){ valid = false; f.style.borderColor = '#d9534f'; f.style.boxShadow = '0 0 0 4px rgba(217,83,79,.13)'; }
+      else { f.style.borderColor = ''; f.style.boxShadow = ''; }
+    });
+    if(!valid) return;
+    var first = name.value.trim().split(' ')[0];
+    var what = service.value ? ' about ' + service.value.toLowerCase() : '';
+    document.getElementById('cbSuccessText').textContent =
+      'Thanks, ' + first + ' — we\'ll call ' + phone.value.trim() +
+      ' back within one business hour' + what + '.';
+    form.style.display = 'none';
+    success.style.display = 'block';
+  });
+  document.getElementById('cbAgain').addEventListener('click', function(){
+    form.reset(); form.style.display = ''; success.style.display = 'none';
+  });
+})();
+</script>
+</body>
+</html>
